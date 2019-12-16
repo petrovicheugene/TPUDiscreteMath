@@ -1,0 +1,292 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11979,        283]
+NotebookOptionsPosition[     11539,        264]
+NotebookOutlinePosition[     11887,        279]
+CellTagsIndexPosition[     11844,        276]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+    RowBox[{"i", "\[LessEqual]", "20"}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"A", ",", "i"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MR1", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"MR1", ",", 
+    RowBox[{"Prepend", "[", 
+     RowBox[{"A", ",", "\"\<a\\\\b\>\""}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MR2", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"MR2", ",", 
+     RowBox[{"Prepend", "[", 
+      RowBox[{"A", ",", "\"\<a\\\\b\>\""}], "]"}]}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{"Length", "[", "A", "]"}]}], ",", 
+    RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"MR1", ",", 
+       RowBox[{"{", "i", "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"MR2", ",", 
+       RowBox[{"{", "i", "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", "=", "1"}], ",", 
+       RowBox[{"j", "\[LessEqual]", 
+        RowBox[{"Length", "[", "A", "]"}]}], ",", 
+       RowBox[{"++", "j"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"r1", "=", 
+         RowBox[{
+          RowBox[{"A", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+           "+", 
+          RowBox[{"2", "*", 
+           RowBox[{
+           "A", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}]}]}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"r2", "=", 
+         RowBox[{
+          RowBox[{"A", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+           "/", 
+          RowBox[{
+          "A", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}]}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"r1", " ", "\[GreaterEqual]", "18"}], "&&", 
+           RowBox[{"r1", "\[LessEqual]", "21"}]}], ",", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{
+            RowBox[{"MR1", "\[LeftDoubleBracket]", 
+             RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], ",", "1"}], 
+           "]"}], ",", " ", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{
+            RowBox[{"MR1", "\[LeftDoubleBracket]", 
+             RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], ",", "0"}], 
+           "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FractionalPart", "[", "r2", "]"}], "\[Equal]", "0"}], ",", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{
+            RowBox[{"MR2", "\[LeftDoubleBracket]", 
+             RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], ",", "1"}], 
+           "]"}], ",", " ", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{
+            RowBox[{"MR2", "\[LeftDoubleBracket]", 
+             RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], ",", "0"}], 
+           "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "\"\<R1:\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MR1", "//", "TableForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "\"\<R2:\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MR2", "//", "TableForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdxVtIUwEAgOGZ2o4UZuqOPbSsGE4oZM2UPUzKh7ZBKRYxwVaYocJgOdQs
+ukEFwy0Y5cRWXnrQbg7EW7ZmD0EGQUnFKZZDtKJk4hxh0YpKOv8ePr5tdU2H
+6tcoFIpCGWe9r/Z8K46VCxb/TbZWvOzjA5rsB5y44XzLoZWe5ClSZZg3ba+J
+cIa6M5a1O1b+SspJ3Sgvqq1KnrJFc7jbtZTHhmBVGR/0j9TyyXN3mtgZnG7l
+LWeipziuy2jnvwmfmztUt3xcPGO5zTFHygA3HC66xz8y3UPsOuoZ5U+ne5/w
+UkB4xtcmhBdcE+yL8FOtZp4/Kl8nd/3Z+Z3Pmu0J1momU7Pl7xd0pbEY/inw
+o6rlTHaGGvO4Y+xfPnse1hp4rshiZm/a4/0cd89YObArvYGn9n5Ibjn+y84r
+xgsOXr9c4M2VF/rP+9ioH/SzrlA/wAvjniH+bJodZqV2NMiiqVni7j2rYW6p
+mI5w+1XHAg9v9qWr5HMH963jY0ZpA4+Zr+/gyrlFPZta35TyZUuJgW3jpWWs
+sKlOcHNcauRL7no7Ty6WtHFdy9crHO23elmn6wpwW/78CM/2iM95a+/F3xw6
+4lzlL53v1oryE9a7av4PP1QZ9Q==
+  "]],
+
+Cell[BoxData["\<\"R1:\"\>"], "Print",
+ CellChangeTimes->{{3.7854046355330677`*^9, 3.7854046552322083`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"a\\\\b\"\>", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", 
+     "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"},
+    {"1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"2", "0", "0", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"3", "0", "0", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"4", "0", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"5", "0", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"6", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"7", "0", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"8", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"9", "0", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"10", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"11", "0", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"12", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"13", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"14", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"15", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"16", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"17", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"18", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"19", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"20", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.7854045817819676`*^9, {3.785404635548067*^9, 3.7854046552462034`*^9}}],
+
+Cell[BoxData["\<\"R2:\"\>"], "Print",
+ CellChangeTimes->{{3.7854046355330677`*^9, 3.785404655249203*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"a\\\\b\"\>", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", 
+     "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"},
+    {"1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"3", "1", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"4", "1", "1", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"5", "1", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"6", "1", "1", "1", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"7", "1", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"8", "1", "1", "0", "1", "0", "0", "0", "1", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"9", "1", "0", "1", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"10", "1", "1", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"11", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"12", "1", "1", "1", "1", "0", "1", "0", "0", "0", "0", "0", "1", "0", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"13", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", 
+     "0", "0", "0", "0", "0", "0", "0"},
+    {"14", "1", "1", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", 
+     "1", "0", "0", "0", "0", "0", "0"},
+    {"15", "1", "0", "1", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "1", "0", "0", "0", "0", "0"},
+    {"16", "1", "1", "0", "1", "0", "0", "0", "1", "0", "0", "0", "0", "0", 
+     "0", "0", "1", "0", "0", "0", "0"},
+    {"17", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "1", "0", "0", "0"},
+    {"18", "1", "1", "1", "0", "0", "1", "0", "0", "1", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "1", "0", "0"},
+    {"19", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "1", "0"},
+    {"20", "1", "1", "0", "1", "1", "0", "0", "0", "0", "1", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "1"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.7854045817819676`*^9, {3.785404635548067*^9, 3.785404655262204*^9}}]
+}, Open  ]]
+},
+WindowSize->{1021, 1024},
+WindowMargins->{{Automatic, 110}, {Automatic, 3}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4543, 113, 452, "Input"],
+Cell[5126, 137, 107, 1, 23, "Print"],
+Cell[5236, 140, 3089, 58, 342, "Output"],
+Cell[8328, 200, 105, 1, 23, "Print"],
+Cell[8436, 203, 3087, 58, 399, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
