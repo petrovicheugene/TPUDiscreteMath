@@ -1070,7 +1070,7 @@ RY79kP8F208bVA==
  CellChangeTimes->{3.7887362083115473`*^9}]
 }, Open  ]]
 },
-WindowSize->{906, 600},
+WindowSize->{906, 907},
 WindowMargins->{{204, Automatic}, {Automatic, 35}},
 FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
@@ -1092,7 +1092,7 @@ Cell[CellGroupData[{
 Cell[32051, 768, 889, 15, 23, "Print"],
 Cell[32943, 785, 1548, 28, 43, "Print"]
 }, Open  ]],
-Cell[34506, 816, 11756, 253, 496, "Output"]
+Cell[34506, 816, 11756, 253, 439, "Output"]
 }, Open  ]]
 }
 ]
